@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 
 def read_df(filepath):
+    '''Reads a zipped csv file and returns a pandas dataframe'''
     with zipfile.ZipFile(filepath) as z:
         with z.open("Crime_Data_from_2020_to_Present.csv") as f:
             df = pd.read_csv(f)
@@ -14,9 +15,11 @@ def read_df(filepath):
     return df
 
 def summarize_df(df):
+    '''Returns summary statistics of the dataframe'''
     return df.describe()
 
 def hist_time_occ(df):
+    '''Plots a histogram of the time of day when crimes occur'''
     plt.figure(figsize = (15,6))
     h = (df['TimeOccHr']).hist(bins = 24)
     h.set(xlabel = "Hour of Day", ylabel = "Crime Occurences",
