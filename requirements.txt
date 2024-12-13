@@ -1,0 +1,9 @@
+black
+pytest
+pytest-cov
+pylint
+
+matplotlib
+pandas
+matplotlib
+IPython
